@@ -178,10 +178,10 @@ header {
   
   .horizontal-card {
     display: flex;
-    justify-content: flex-start; /* Aligns content to the left */
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 180px; /* Fixed height for the card */
+    height: 180px;
     overflow: hidden;
   }
   
@@ -230,7 +230,7 @@ header {
 /* 2 card wrapper (2nd section) */
 .cards-wrapper {
     display: flex;
-    justify-content: space-evenly; /* Place the cards side by side */
+    justify-content: space-evenly; 
     gap: 10px;
     width: 100%;
     margin-bottom: 30px;
@@ -238,18 +238,18 @@ header {
   
   /* Card Styles for the second part */
   .custom-card {
-    width: 48%; /* Make the cards fit side by side */
+    width: 48%; 
     border-radius: 10px;
     overflow: hidden;
     background-color: #fff;
-    position: relative; /* Required for the image overlay */
+    position: relative; 
   }
   
   /* Overlay for darkening images */
   .custom-card-image-wrapper {
     position: relative;
     width: 100%;
-    height: 400px; /* Set a height for the image */
+    height: 400px; 
     overflow: hidden;
   }
   
@@ -276,7 +276,7 @@ header {
     position: absolute;
     top: 80%;
     left: 15px;
-    transform: translateY(-50%); /* Vertically center the text */
+    transform: translateY(-50%); 
     color: #fff;
     z-index: 1;
   }
