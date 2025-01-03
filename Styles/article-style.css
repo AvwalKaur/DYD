@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+:root {
+    --background-primary-color: #f2f2f2;
+    --button-background-color:#363636;
+    --text-secondary-color: #353535;
+    --font-colour: black;
+    --text-font-family:"Anton", serif;
+    --font-size-heading: 8vw;
+    --font-size-text: 1.9vw;
+    --button-radius: 30px;
+    --button-padding: 10px 20px;
+}
+
+  
+*{
+  
+    box-sizing: border-box;
+    margin: 2px 5px;
+    transition: .2s linear;
+    overflow-x: hidden;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+
+
+}
+/*----------------header-------------------------------*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+/* Logo styling */
+.logo {
+    flex: 1;
+}
+
+.logo-text {
+    font-family: var(--text-font-family);
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+    color: var(--font-colour);
+}
+
+/* Menu section */
+.menu {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: border-bottom 0.5s ease;  
+    border-bottom: 2px solid transparent;  
+}
+
+.nav a:hover {
+    border-bottom: 2px solid #333;  
+}
+
+
+
+
+/* Button section */
+.button-container {
+    flex: 1;
+    text-align: right;
+}
+
+.cta-button {
+    font-size: 1vw;
+    color: var(--font-colour);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: black 2px solid ;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .nav {
+        display: block;
+        text-align: center;
+    }
+
+    .nav a {
+        display: block;
+        padding: 12px 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+}
+
+
+/* General styles for the container */
+.blog-container {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 30px;
+    margin: 20px 15px 50px 15px;
+  }
+  
+  /* Left Section (large card) */
+  .left-section {
+    width: 60%;  
+  }
+  
+  .card {
+    margin: 0px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    text-align: left; 
+    margin: 5px 0px;
+  }
+  
+  .card-title:hover {
+    text-decoration: underline;
+  }
+  
+  .card-info {
+    margin: 2px;
+    color: #555;
+  }
+  
+  .card-info span {
+    color: red;
+  }
+  
+
+  .link {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Right Section (three horizontal cards) */
+  .right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .horizontal-card {
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: center;
+    width: 100%;
+    height: 180px; /* Fixed height for the card */
+    overflow: hidden;
+  }
+  
+  .horizontal-card-image {
+    border-radius: 8px;
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .horizontal-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    width: 55%;
+    text-align: left; 
+  }
+  
+  .horizontal-card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .horizontal-card-subtitle {
+    font-size: 0.9rem;
+    color: #575757;
+    margin-bottom: 10px;
+  }
+  
+  .horizontal-card a {
+    font-size: 0.9rem;
+    color: #2f2f2f;
+    text-decoration: none;
+  }
+  
+  .horizontal-card a:hover {
+    text-decoration: underline;
+  }
+
+
+
+
+
+/* 2 card wrapper (2nd section) */
+.cards-wrapper {
+    display: flex;
+    justify-content: space-evenly; /* Place the cards side by side */
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  /* Card Styles for the second part */
+  .custom-card {
+    width: 48%; /* Make the cards fit side by side */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    position: relative; /* Required for the image overlay */
+  }
+  
+  /* Overlay for darkening images */
+  .custom-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Set a height for the image */
+    overflow: hidden;
+  }
+  
+  .custom-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease; 
+  }
+  
+  .custom-card-image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Card Text */
+  .custom-card-content {
+    position: absolute;
+    top: 80%;
+    left: 15px;
+    transform: translateY(-50%); /* Vertically center the text */
+    color: #fff;
+    z-index: 1;
+  }
+  
+  .custom-card-title {
+    color: var(--background-primary-color);
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .custom-card-title:hover{
+    text-decoration: underline;
+  }
+  
+  .custom-card-subtitle {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .custom-card-info {
+    font-size: 0.9rem;
+    color: #f1f1f1;
+  }
+  
+  .custom-card-info span {
+    color:var(--background-primary-color);
+  }
+  
+  .custom-card:hover .custom-card-image-wrapper::after {
+    opacity: 0.7;
+  }
+  
