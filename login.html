@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - DYD</title>
+    <script src="https://js.clerk.dev/v2/clerk.js"></script>
+    <link rel="stylesheet" href="Styles/lstyles.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <!-- Left Side: Image fading effect -->
+      <div class="image-box">
+        <img src="images/m4.webp" alt="Image 1" class="fade-image">
+        
+    </div>
+
+    <!-- Right Side: Login Form using Clerk -->
+
+    <div id="app"></div>
+
+    <!-- Initialize Clerk with your Clerk Publishable Key and Frontend API URL -->
+    <script async crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_cG9zaXRpdmUtdHVya2V5LTIxLmNsZXJrLmFjY291bnRzLmRldiQ"
+      src="https://positive-turkey-21.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+      type="text/javascript">
+    </script>
+
+    <script>
+      window.addEventListener('load', async function () {
+        await Clerk.load()
+
+        if (Clerk.user) {
+
+        window.location.href = 'index.html';
+
+
+          document.getElementById('app').innerHTML = `
+            <div id="user-button"></div>
+          `
+          const userButtonDiv = document.getElementById('user-button')
+          Clerk.mountUserButton(userButtonDiv)
+        } else {
+          document.getElementById('app').innerHTML = `
+            <div id="sign-in"></div>
+          `
+          const signInDiv = document.getElementById('sign-in')
+          Clerk.mountSignIn(signInDiv)
+        }
+      })
+    </script>
+  </body>
+</html>
