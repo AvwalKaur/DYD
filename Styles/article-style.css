@@ -63,6 +63,7 @@ header {
 }
 
 .nav a {
+    font-family:'Times New Roman', Times, serif;
     color: #333;
     text-decoration: none;
     padding: 10px 20px;
