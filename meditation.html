@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Styles/meditation.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYD</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 class="logo-text">DYD</h1>
+        </div>
+    
+        <div class="menu">
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="women.html">WOMEN</a>
+                <a href="men.html">MEN</a>
+                <a href="articles.html">ARTICLES</a>
+                <a href="Meditation.html">MEDITATION</a>
+            </nav>
+        </div>
+    
+        <div class="button-container" id="login-button-container">
+            
+            <a href="login.html"><button class="cta-button">Login</button></a>
+        </div>
+    
+        <div class="user-container" id="user-container" style="display: none;">
+           
+            <div id="user-profile">
+                <img id="user-avatar" src="" alt="Profile Picture" />
+                <button id="user-button"></button>
+            </div>
+        </div>
+    </header>
+
+<!-- clerk-login-container-start-->
+<script src="config.js" defer></script>
+<script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Dynamically create the Clerk script
+      const script = document.createElement("script");
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      script.setAttribute("data-clerk-publishable-key", CLERK_PUBLISHABLE_KEY);
+      script.src = "https://positive-turkey-21.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js";
+
+      // Append the script to the document head
+      document.head.appendChild(script);
+    });
+  </script>
+    
+    <script>
+        window.addEventListener('load', async function () {
+          await Clerk.load()
+    
+          if (Clerk.user) {
+            
+            document.getElementById('login-button-container').style.display = 'none'; 
+            document.getElementById('user-container').style.display = 'block'; 
+            document.getElementById('user-avatar').src = Clerk.user.profileImageUrl;  
+            
+            // Mount the Clerk user button in the user profile
+            const userButtonDiv = document.getElementById('user-button');
+            Clerk.mountUserButton(userButtonDiv);
+          } else {
+            // If user is not logged in, show the login button
+            document.getElementById('login-button-container').style.display = 'block';  
+            document.getElementById('user-container').style.display = 'none';  
+          }
+        });
+    </script>
+    
+      
+    
+<!-- clerk-login-container-end -->
+
+
+<div class="text-container">
+    <p class="text1">Find Your Mood</p>
+    <p class="text2">How Do You<br> Feel Today</br> </p>
+</div>
+
+<div class="video-container" id="videoContainer">
+    <iframe 
+      id="youtubeVideo"
+      src="https://www.youtube.com/embed/j734gLbQFbU?enablejsapi=1"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+    <div class="play-button" id="playButton"></div>
+</div>
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+<script>
+    const playButton = document.getElementById('playButton');
+    const videoContainer = document.getElementById('videoContainer');
+    const youtubeVideo = document.getElementById('youtubeVideo');
+
+    playButton.addEventListener('click', () => {
+      youtubeVideo.src += "&autoplay=1";
+      videoContainer.classList.add('playing');
+    });
+  </script>
+  <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="1tOGBwDTZlVlDe0LamArm";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+  <footer class="footer-container">
+    <div class="arrow-image-container">
+        <img src="images/star2.png" />
+    </div>
+    <br />
+    <div class="text5">YOUR BODY IS<br> YOUR TEMPLE</div>
+    <div class="text6">
+        Fitness involves building a healthy and active lifestyle through regular physical activity, nutritious eating,
+        <br> and adequate rest. It boosts energy levels, improves strength and flexibility,
+        <br> enhances mental clarity, and reduces the risk of various health conditions.
+    </div>
+    <br />
+    <div class="button-container2">
+        <button class="cta-button">Terms and Policies</button>
+        <button class="cta-button">About</button>
+        <button class="cta-button">Memberships</button>
+    </div>
+</footer>
+</body>
+</html>
