@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/memberships..css">
+    <title>DYD</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 class="logo-text">DYD</h1>
+        </div>
+    
+        <div class="menu">
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="women.html">WOMEN</a>
+                <a href="men.html">MEN</a>
+                <a href="articles.html">ARTICLES</a>
+                <a href="Meditation.html">MEDITATION</a>
+            </nav>
+        </div>
+    
+        <div class="button-container" id="login-button-container">
+            
+            <a href="login.html"><button class="cta-button">Login</button></a>
+        </div>
+    
+        <div class="user-container" id="user-container" style="display: none;">
+           
+            <div id="user-profile">
+                <img id="user-avatar" src="" alt="Profile Picture" />
+                <button id="user-button"></button>
+            </div>
+        </div>
+    </header>
+
+<!-- clerk-login-container-start-->
+<script src="config.js" defer></script>
+<script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Dynamically create the Clerk script
+      const script = document.createElement("script");
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      script.setAttribute("data-clerk-publishable-key", CLERK_PUBLISHABLE_KEY);
+      script.src = "https://positive-turkey-21.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js";
+
+      // Append the script to the document head
+      document.head.appendChild(script);
+    });
+  </script>
+    
+    <script>
+        window.addEventListener('load', async function () {
+          await Clerk.load()
+    
+          if (Clerk.user) {
+            
+            document.getElementById('login-button-container').style.display = 'none'; 
+            document.getElementById('user-container').style.display = 'block'; 
+            document.getElementById('user-avatar').src = Clerk.user.profileImageUrl;  
+            
+            // Mount the Clerk user button in the user profile
+            const userButtonDiv = document.getElementById('user-button');
+            Clerk.mountUserButton(userButtonDiv);
+          } else {
+            // If user is not logged in, show the login button
+            document.getElementById('login-button-container').style.display = 'block';  
+            document.getElementById('user-container').style.display = 'none';  
+          }
+        });
+    </script>
+    
+      
+    
+<!-- clerk-login-container-end -->
+    <div class="text-container">
+        <p class="text1">A Healthy Lifestyle</p>
+        <p class="text2">What Does<br> It Cost?</br> </p>
+        <p class="text1">So we're saving you the hassle of tens or hundreds of thousands of dollars and doing it all fast, but don't worry, we're not overcharging you.</p>
+        
+    </div>
+
+
+    <div class="card-container">
+        <div class="card">
+          <p>Card 1 Text</p>
+        </div>
+        <div class="card">
+          <p>Card 2 Text</p>
+        </div>
+        <div class="card">
+          <p>Card 3 Text</p>
+        </div>
+        <div class="card">
+          <p>Card 4 Text</p>
+        </div>
+      </div>
+      
+    
+</body>
+</html>
