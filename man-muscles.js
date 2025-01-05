@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 
-
+// back portion of the man muscles
 
   document.addEventListener('DOMContentLoaded', function() {
     const videoUrls = {
