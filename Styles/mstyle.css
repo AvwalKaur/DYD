@@ -107,6 +107,33 @@ header {
   }
 }
 
+
+/* text -container */
+.text-container {
+  text-align: center;
+  padding: 50px 0px;
+}
+
+.text1 {
+  font-family:var(--text-font-family);
+  font-size: 1rem;
+  color: var(--font-colour);
+}
+
+.text2 {
+  font-family: var(--text-font-family);
+  font-size: 4vw;  
+  color: var(--font-colour);
+  line-height: 1;
+  overflow: hidden;
+  margin: 0px;
+}
+
+
+
+
+
+
 /* muscle-section */
 
 .container {
