@@ -155,6 +155,6 @@ header {
     padding: 30px ;
     border: 1px solid #ccc;
     text-align: center;
-    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    box-sizing: border-box; 
   }
   

@@ -151,9 +151,15 @@
 <!-- creator content start -->
 <a  class="creator-links" href="https://www.youtube.com/@self" ><p class="creator">@SELF</p></a>
 <div class="video-container" id="videoContainer">
-    
-    <iframe width="500" height="315" src="https://www.youtube.com/embed/Em2CvhsVWfE?si=7I3RcO-5LsQMawOZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <div class="play-button" id="playButton"></div>
+  <iframe 
+  id="youtubeVideo1"
+  src="https://www.youtube.com/embed/Em2CvhsVWfE?enablejsapi=1"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+    <!-- <iframe id="youtubeVideo" width="500" height="315" src="https://www.youtube.com/embed/Em2CvhsVWfE?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+<div class="play-button" id="playButton"></div>
 </div>
 
 <div class="card-container">
@@ -268,5 +274,8 @@
         <a href="memberships.html" ><button class="cta-button">Memberships</button></a>
     </div>
 </footer>
+<script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="1tOGBwDTZlVlDe0LamArm";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
 </body>
 </html>

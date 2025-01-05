@@ -20,92 +20,90 @@
   <body>
     <header>
       <div class="logo">
-          <h1 class="logo-text">DYD</h1>
+        <h1 class="logo-text">DYD</h1>
       </div>
-  
+
       <div class="menu">
-          <nav class="nav">
-              <a href="index.html">HOME</a>
-              <a href="women.html">WOMEN</a>
-              <a href="men.html">MEN</a>
-              <a href="articles.html">ARTICLES</a>
-              <a href="Meditation.html">MEDITATION</a>
-          </nav>
+        <nav class="nav">
+          <a href="index.html">HOME</a>
+          <a href="women.html">WOMEN</a>
+          <a href="men.html">MEN</a>
+          <a href="articles.html">ARTICLES</a>
+          <a href="Meditation.html">MEDITATION</a>
+        </nav>
       </div>
-  
+
       <div class="button-container" id="login-button-container">
-          
-          <a href="login.html"><button class="cta-button">Login</button></a>
+        <a href="login.html"><button class="cta-button">Login</button></a>
       </div>
-  
-      <div class="user-container" id="user-container" style="display: none;">
-         
-          <div id="user-profile">
-              <img id="user-avatar" src="" alt="Profile Picture" />
-              <button id="user-button"></button>
-          </div>
+
+      <div class="user-container" id="user-container" style="display: none">
+        <div id="user-profile">
+          <img id="user-avatar" src="" alt="Profile Picture" />
+          <button id="user-button"></button>
+        </div>
       </div>
-  </header>
+    </header>
 
-<!-- clerk-login-container-start-->
-<script src="config.js" defer></script>
-<script defer>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Dynamically create the Clerk script
-      const script = document.createElement("script");
-      script.async = true;
-      script.crossOrigin = "anonymous";
-      script.setAttribute("data-clerk-publishable-key", CLERK_PUBLISHABLE_KEY);
-      script.src = "https://positive-turkey-21.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js";
+    <!-- clerk-login-container-start-->
+    <script src="config.js" defer></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Dynamically create the Clerk script
+        const script = document.createElement("script");
+        script.async = true;
+        script.crossOrigin = "anonymous";
+        script.setAttribute(
+          "data-clerk-publishable-key",
+          CLERK_PUBLISHABLE_KEY
+        );
+        script.src =
+          "https://positive-turkey-21.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js";
 
-      // Append the script to the document head
-      document.head.appendChild(script);
-    });
-  </script>
-  
-  <script>
-      window.addEventListener('load', async function () {
-        await Clerk.load()
-  
+        // Append the script to the document head
+        document.head.appendChild(script);
+      });
+    </script>
+
+    <script>
+      window.addEventListener("load", async function () {
+        await Clerk.load();
+
         if (Clerk.user) {
-          
-          document.getElementById('login-button-container').style.display = 'none'; 
-          document.getElementById('user-container').style.display = 'block'; 
-          document.getElementById('user-avatar').src = Clerk.user.profileImageUrl;  
-          
+          document.getElementById("login-button-container").style.display =
+            "none";
+          document.getElementById("user-container").style.display = "block";
+          document.getElementById("user-avatar").src =
+            Clerk.user.profileImageUrl;
+
           // Mount the Clerk user button in the user profile
-          const userButtonDiv = document.getElementById('user-button');
+          const userButtonDiv = document.getElementById("user-button");
           Clerk.mountUserButton(userButtonDiv);
         } else {
           // If user is not logged in, show the login button
-          document.getElementById('login-button-container').style.display = 'block';  
-          document.getElementById('user-container').style.display = 'none';  
+          document.getElementById("login-button-container").style.display =
+            "block";
+          document.getElementById("user-container").style.display = "none";
         }
       });
-  </script>
-  
-  
-  
-    
-  
-<!-- clerk-login-container-end -->
+    </script>
+
+    <!-- clerk-login-container-end -->
 
     <div class="container">
-      
       <!-- Left Side: Exercises -->
       <div class="left-panel">
-        
         <div id="exercise-list">
-          
+          <div id="video-container"></div>
         </div>
       </div>
 
       <!-- Right Side: SVGs (Body Muscles) -->
-      
+
       <div class="right-panel">
-        
         <div class="muscle-svg">
           <svg
+            id="muscle-svg-front"
             viewBox="0 0 660.46 1206.46"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +183,7 @@
               class="bodymap text-mw-gray active:text-mw-red-700 lg:hover:text-mw-red-100"
             >
               <path
-                d="M641.72,606.51c-.72-3.08-1.76-4.39-3.21-6.2-1.2-1.5-2.6- 3.25-4-6.33.39,3.69,1.45,5.88,2.44,7.89,1.11,2.27,2.25,4.62,2.18,8.39-.07,3.27.15,5.48.38,7.62.33,3.14.62,6.1-.21,11.37-.3,1.91-.05,3.3.75,4.16.73.78,1.89,1.09,2.88,1.21,0-1.21.15-2.5.39-3.88,1.61-9.13,1.28-10.51.27-14.63-.51-2.08-1.2-4.91-1.87-9.61Z"
+                d="M641.72,606.51c-.72-3.08-1.76-4.39-3.21-6.2-1.2-1.5-2.6-3.25-4-6.33.39,3.69,1.45,5.88,2.44,7.89,1.11,2.27,2.25,4.62,2.18,8.39-.07,3.27.15,5.48.38,7.62.33,3.14.62,6.1-.21,11.37-.3,1.91-.05,3.3.75,4.16.73.78,1.89,1.09,2.88,1.21,0-1.21.15-2.5.39-3.88,1.61-9.13,1.28-10.51.27-14.63-.51-2.08-1.2-4.91-1.87-9.61Z"
                 fill="currentColor"
               ></path>
               <path
@@ -229,7 +227,7 @@
               ></path>
             </g>
             <g
-              id="front-shoulders"
+              id="fshoulders"
               class="bodymap text-mw-gray active:text-mw-red-700 lg:hover:text-mw-red-100"
             >
               <path
@@ -762,6 +760,7 @@
         </div>
         <div class="muscle-svg">
           <svg
+            id="muscle-svg-back"
             viewBox="0 0 660.46 1206.46"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -906,7 +905,7 @@
               ></path>
             </g>
             <g
-              id="traps-middle"
+              id="middletraps"
               class="bodymap text-mw-gray active:text-mw-red-700 lg:hover:text-mw-red-100"
             >
               <path
@@ -915,7 +914,7 @@
               ></path>
             </g>
             <g
-              id="rear-shoulders"
+              id="rshoulders"
               class="bodymap text-mw-gray active:text-mw-red-700 lg:hover:text-mw-red-100"
             >
               <path
@@ -1227,37 +1226,64 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
+    <script src="man-muscles.js"></script>
     <script>
-      (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="1tOGBwDTZlVlDe0LamArm";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-  </script>
-  
+      (function () {
+        if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+          window.chatbase = (...arguments) => {
+            if (!window.chatbase.q) {
+              window.chatbase.q = [];
+            }
+            window.chatbase.q.push(arguments);
+          };
+          window.chatbase = new Proxy(window.chatbase, {
+            get(target, prop) {
+              if (prop === "q") {
+                return target.q;
+              }
+              return (...args) => target(prop, ...args);
+            },
+          });
+        }
+        const onLoad = function () {
+          const script = document.createElement("script");
+          script.src = "https://www.chatbase.co/embed.min.js";
+          script.id = "1tOGBwDTZlVlDe0LamArm";
+          script.domain = "www.chatbase.co";
+          document.body.appendChild(script);
+        };
+        if (document.readyState === "complete") {
+          onLoad();
+        } else {
+          window.addEventListener("load", onLoad);
+        }
+      })();
+    </script>
+
     <footer class="footer-container">
       <div class="arrow-image-container">
-          <img src="images/star2.png" />
+        <img src="images/star2.png" />
       </div>
       <br />
-      <div class="text5">YOUR BODY IS<br> YOUR TEMPLE</div>
+      <div class="text5">
+        YOUR BODY IS<br />
+        YOUR TEMPLE
+      </div>
       <div class="text6">
-          Fitness involves building a healthy and active lifestyle through regular physical activity, nutritious eating,
-          <br> and adequate rest. It boosts energy levels, improves strength and flexibility,
-          <br> enhances mental clarity, and reduces the risk of various health conditions.
+        Fitness involves building a healthy and active lifestyle through regular
+        physical activity, nutritious eating,
+        <br />
+        and adequate rest. It boosts energy levels, improves strength and
+        flexibility, <br />
+        enhances mental clarity, and reduces the risk of various health
+        conditions.
       </div>
       <br />
       <div class="button-container2">
-          <button class="cta-button">Terms and Policies</button>
-          <button class="cta-button">About</button>
-          <button class="cta-button">Memberships</button>
+        <button class="cta-button">Terms and Policies</button>
+        <button class="cta-button">About</button>
+        <button class="cta-button">Memberships</button>
       </div>
-  </footer>
+    </footer>
   </body>
 </html>
