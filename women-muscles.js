@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       middletraps: 'https://www.youtube.com/embed/hh8EU1iSyYw',
       glutes: 'https://www.youtube.com/embed/_hIFF8G-BG0',
       triceps: 'https://www.youtube.com/embed/RPkTy8emOgQ',
+      
     };
   
     document.getElementById('muscle-svg-back').addEventListener('click', function(event) {
@@ -76,4 +77,3 @@ document.addEventListener('DOMContentLoaded', function() {
       `;
     }
   });
-  
