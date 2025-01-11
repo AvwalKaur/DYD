@@ -138,7 +138,6 @@ header {
     margin: 0px;
 }
 
-
 .text-container2 {
     text-align: center;
     padding: 50px 0px;
@@ -166,7 +165,6 @@ header {
 
 
 /* image-container */
-
 .image-container {
     position: relative;
     display: flex;
@@ -200,7 +198,6 @@ header {
 
 
 /* trainings-overview */
-
 .container {
     display: flex;
     justify-content: space-between;
@@ -240,7 +237,6 @@ header {
 
 
 /* training-section-images */
-
 .trainings-section {
     display: flex;
     flex-direction: column;  
