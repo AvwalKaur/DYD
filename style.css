@@ -298,8 +298,6 @@ header {
 }
 
 
-
-
 /* membership-training */
 .membership1 {
     display: flex;
@@ -334,9 +332,6 @@ header {
 
 
 /* footer-designs */
-
-
-
 .footer-container {
     background-color: #212121;
     text-align: center;
@@ -385,8 +380,6 @@ header {
 .footer-container .cta-button:hover {
     background-color: var(--button-hover-background-color);
 }
-
-
 
 /* User Profile Container */
 .user-container {
